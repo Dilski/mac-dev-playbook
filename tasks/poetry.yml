@@ -1,0 +1,23 @@
+---
+# Install Poetry
+- name: Check if poetry is installed
+  ansible.builtin.command: "{{ ansible_env.HOME }}/.local/bin/poetry"
+  register: poetry_cmd
+  changed_when: false
+  ignore_errors: true
+
+- name: Download poetry installer
+  ansible.builtin.get_url:
+    url: https://install.python-poetry.org
+    dest: "{{ ansible_env.HOME }}/install-poetry.py"
+    mode: "0400"
+    timeout: 20
+  when: poetry_cmd is failed
+  notify: Delete poetry installer
+  become: true
+
+- name: Install poetry
+  ansible.builtin.command: "python3 {{ ansible_env.HOME }}/install-poetry.py"
+  register: output
+  changed_when: "output.rc == 0"
+  when: poetry_cmd is failed

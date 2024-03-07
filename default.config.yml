@@ -1,0 +1,149 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_dotfiles: true
+configure_terminal: true
+configure_osx: true
+configure_poetry: true
+
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: true
+dockitems_remove:
+- Launchpad
+- Messages
+- Mail
+- Maps
+- FaceTime
+- Calendar
+- Contacts
+- Reminders
+- Notes
+- Freeform
+- Music
+- News
+- TV
+- Safari
+- Podcasts
+- 'App Store'
+- Photos
+dockitems_persist:
+- name: "Obsidian"
+  path: "/Applications/Obsidian.app/"
+  pos: 2
+- name: "Chrom"
+  path: "/Applications/Google\ Chrome.app/"
+  pos: 3
+- name: "Microsoft Teams"
+  path: "/Applications/Microsoft Teams (work or school).app/"
+  pos: 4
+- name: "Spotify"
+  path: "/Applications/Spotify.app/"
+  pos: 5
+- name: "Yubico Authenticator"
+  path: "/Applications/Yubico Authenticator.app/"
+  pos: 6
+- name: "Miro"
+  path: "/Applications/Miro.app/"
+  pos: 7
+- name: "Terminal"
+  path: "/Applications/Utilities/Terminal.app/"
+  pos: 8
+- name: "Visual Studio Code"
+  path: "/Applications/Visual Studio Code.app"
+  pos: 9
+- name: "Leapp"
+  path: "/Applications/Leapp.app"
+  pos: 10
+- name: "Microsoft Outlook"
+  path: "/Applications/Microsoft Outlook.app"
+  pos: 11
+
+dotfiles_repo: git@github.com:Dilski/dotfiles.git
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: ~/src/github.com/dilski/dotfiles
+dotfiles_files:
+  - .gitignore_global
+  - .gitconfig
+  - .osx
+
+homebrew_installed_packages:
+  - age
+  - autoconf
+  - awscli
+  - bash-completion
+  - bitwarden-cli
+  - direnv
+  - fzf
+  - gettext
+  - gh
+  - gifsicle
+  - git
+  - glab
+  - go
+  - go-task
+  - gpg
+  - helm
+  - hledger
+  - httpie
+  - icu4c
+  - iperf
+  - jenv
+  - jq
+  - keychain
+  - leapp-cli
+  - libevent
+  - make
+  - make
+  - maven
+  - mcrypt
+  - nmap
+  - node
+  - nvm
+  - openssl
+  - postgresql@14
+  - pv
+  - readline
+  - sops
+  - sqlite
+  - ssh-copy-id
+  - terraform
+  - tree
+  - wget
+  - zsh-history-substring-search
+  # - ansible # Installed via Pip.
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - alt-tab
+  - arc
+  - datagrip
+  - docker
+  - dropbox
+  - elgato-stream-deck
+  - firefox
+  - google-chrome
+  - intellij-idea
+  - leapp
+  - maccy
+  - miro
+  - nosql-workbench
+  - obsidian
+  - postman
+  - session-manager-plugin
+  - spotify
+  - visual-studio-code
+  - yubico-authenticator
+  - zoom
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps:
+  - { id: 1352778147, name: "Bitwarden" }
+
+mas_email: ""
+mas_password: ""
+
+osx_script: "~/.osx --no-restart"
