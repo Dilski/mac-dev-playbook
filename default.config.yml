@@ -26,11 +26,12 @@ dockitems_remove:
 - Podcasts
 - 'App Store'
 - Photos
+- 'System Settings'
 dockitems_persist:
 - name: "Obsidian"
   path: "/Applications/Obsidian.app/"
   pos: 2
-- name: "Chrom"
+- name: "Chrome"
   path: "/Applications/Google\ Chrome.app/"
   pos: 3
 - name: "Microsoft Teams"
@@ -57,6 +58,12 @@ dockitems_persist:
 - name: "Microsoft Outlook"
   path: "/Applications/Microsoft Outlook.app"
   pos: 11
+- name: "Self Service"
+  path: "/Applications/Self Service.app"
+  pos: 12
+- name: "DataGrip"
+  path: "/Applications/DataGrip.app"
+  pos: 13
 
 dotfiles_repo: git@github.com:Dilski/dotfiles.git
 dotfiles_repo_accept_hostkey: true
@@ -67,12 +74,14 @@ dotfiles_files:
   - .osx
 
 homebrew_installed_packages:
-  - age
   - autoconf
   - awscli
   - bash-completion
+  - bat
   - bitwarden-cli
   - direnv
+  - fd
+  - fish
   - fzf
   - gettext
   - gh
@@ -82,7 +91,6 @@ homebrew_installed_packages:
   - go
   - go-task
   - gpg
-  - helm
   - hledger
   - httpie
   - icu4c
@@ -90,12 +98,9 @@ homebrew_installed_packages:
   - jenv
   - jq
   - keychain
-  - leapp-cli
   - libevent
   - make
-  - make
   - maven
-  - mcrypt
   - nmap
   - node
   - nvm
@@ -103,27 +108,46 @@ homebrew_installed_packages:
   - postgresql@14
   - pv
   - readline
-  - sops
   - sqlite
   - ssh-copy-id
+  - starship
   - terraform
   - tree
   - wget
   - zsh-history-substring-search
   # - ansible # Installed via Pip.
+  # my k8s stuff
+  - age
+  - cilium-cli
+  - cloudflared
+  - fluxcd/tap/flux
+  - helm
+  - k0sproject/tap/k0sctl
+  - kubeconform
+  - kubecolor/tap/kubecolor
+  - kubernetes-cli
+  - kustomize
+  - moreutils
+  - sops
+  - stern
+  - yq
 
-homebrew_taps:
-  - homebrew/core
-  - homebrew/cask
+homebrew_taps: 
+  - homebrew/cask-fonts
+  - fluxcd/tap
+  - go-task/tap
+  - k0sproject/tap
+  - kubecolor/tap
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - alt-tab
-  - arc
   - datagrip
   - docker
   - dropbox
   - elgato-stream-deck
+  - font-fira-code-nerd-font
+  - font-fira-mono-nerd-font
   - firefox
   - google-chrome
   - intellij-idea
