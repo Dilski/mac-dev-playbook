@@ -80,6 +80,7 @@ homebrew_installed_packages:
   - bat
   - bitwarden-cli
   - direnv
+  - docker-credential-helper-ecr
   - fd
   - fish
   - fzf
@@ -143,7 +144,6 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - alt-tab
   - datagrip
-  - docker
   - dropbox
   - elgato-stream-deck
   - font-fira-code-nerd-font
